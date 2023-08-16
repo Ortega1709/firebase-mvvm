@@ -10,12 +10,12 @@ import kotlinx.coroutines.launch
 
 class WhiteNightViewModel: ViewModel() {
 
-    var _isDarkTheme by mutableStateOf(false)
+    var isDarkTheme by mutableStateOf(false)
 
 
     fun changeTheme() {
         viewModelScope.launch {
-            _isDarkTheme = !_isDarkTheme
+            isDarkTheme = !isDarkTheme
         }
     }
 

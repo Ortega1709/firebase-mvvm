@@ -37,7 +37,7 @@ fun WhiteNightScreen(whiteNightViewModel: WhiteNightViewModel) {
 
             ListItem(
                 headlineContent = { Text(text = "Dark/Light Theme") },
-                trailingContent = { Switch(checked = whiteNightViewModel._isDarkTheme, onCheckedChange = {
+                trailingContent = { Switch(checked = whiteNightViewModel.isDarkTheme, onCheckedChange = {
                     whiteNightViewModel.changeTheme()
                 }) }
             )
