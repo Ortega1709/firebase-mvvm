@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
 
             val whiteNightViewModel: WhiteNightViewModel = viewModel()
 
-            FirebasemvvmTheme(darkTheme = whiteNightViewModel._isDarkTheme) {
+            FirebasemvvmTheme(darkTheme = whiteNightViewModel.isDarkTheme) {
                 WhiteNightScreen(whiteNightViewModel)
             }
         }
