@@ -60,7 +60,7 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             
-            Text(text = viewModel.uiState.list.size.toString())
+            Text(text = uiState.list.size.toString())
 
         }
     }
@@ -80,7 +80,9 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
                     title = titleField, category = categoryField, image = imageField
                 )
                 viewModel.saveMovie(movie)
-                Toast.makeText(context, "Save", Toast.LENGTH_LONG).show()
+                showBottomSheet = false
+
+                viewModel.getAllMovies()
 
             }
         )
