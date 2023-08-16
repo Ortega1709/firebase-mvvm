@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.ortega.firebase_mvvm" />
+                  <option name="mobileSdkAppId" value="1:151200296718:android:5eeacc256771b3ea98315f" />
+                  <option name="projectId" value="fir-mvvm-5668d" />
+                  <option name="projectNumber" value="151200296718" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

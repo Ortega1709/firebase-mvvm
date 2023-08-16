@@ -1,4 +1,4 @@
-package com.ortega.firebase_mvvm.ui.theme
+package com.ortega.firebase_mvvm.presentation.theme
 
 import android.app.Activity
 import android.os.Build
@@ -57,8 +57,8 @@ fun FirebasemvvmTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            window.statusBarColor = if (darkTheme) colorScheme.background.toArgb() else colorScheme.background.toArgb()
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
 

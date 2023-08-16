@@ -1,5 +1,6 @@
 [versions]
 agp = "8.2.0-alpha15"
+google-services = "4.3.15"
 kotlin = "1.8.10"
 core-ktx = "1.10.1"
 junit = "4.13.2"
@@ -17,9 +18,11 @@ hilt-version = "2.44"
 retrofit-version = "2.9.0"
 okhttp-version = "4.11.0"
 paging-version = "3.2.0"
+firebase-firestore-ktx = "24.7.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+google-services = { module = "com.google.gms:google-services", version.ref = "google-services" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
@@ -54,6 +57,7 @@ okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okht
 
 material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-version" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebase-firestore-ktx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

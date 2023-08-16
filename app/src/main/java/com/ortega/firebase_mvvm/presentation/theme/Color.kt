@@ -1,4 +1,4 @@
-package com.ortega.firebase_mvvm.ui.theme
+package com.ortega.firebase_mvvm.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
