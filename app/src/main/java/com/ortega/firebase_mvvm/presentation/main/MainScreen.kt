@@ -1,15 +1,25 @@
 package com.ortega.firebase_mvvm.presentation.main
 
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -21,8 +31,15 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import coil.compose.AsyncImage
+import com.ortega.firebase_mvvm.R
 import com.ortega.firebase_mvvm.domain.model.Movie
 import com.ortega.firebase_mvvm.presentation.components.main.BottomSheetComponent
 
@@ -43,7 +60,7 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
     Scaffold (
         topBar = {
             TopAppBar(
-                title = { /*TODO*/ },
+                title = { Text(text = stringResource(R.string.movies)) },
                 actions = {
                     IconButton(onClick = { showBottomSheet = true }) {
                         Icon(imageVector = Icons.Rounded.Add, contentDescription = null)
@@ -55,12 +72,40 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(it)
+                .padding(horizontal = 16.dp)
         ) {
             
-            Text(text = uiState.list.size.toString())
+            LazyColumn {
+                items(uiState.list) {
+                    Card (
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        
+                        ListItem(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(color = Color.Transparent),
+                            leadingContent = {
+                               AsyncImage(
+                                   modifier = Modifier
+                                       .width(90.dp)
+                                       .height(150.dp)
+                                       .clip(RoundedCornerShape(16.dp)),
+                                   model = it.image,
+                                   contentScale = ContentScale.Crop,
+                                   contentDescription = null
+                               )              
+                            },
+                            headlineContent = { Text(text = it.title) },
+                            supportingContent = { Text(text = it.category) }
+                        )
+                        
+                    }
+                    
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
+            }
 
         }
     }
