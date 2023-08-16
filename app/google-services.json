@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "151200296718",
+    "project_id": "fir-mvvm-5668d",
+    "storage_bucket": "fir-mvvm-5668d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151200296718:android:5eeacc256771b3ea98315f",
+        "android_client_info": {
+          "package_name": "com.ortega.firebase_mvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151200296718-52j7squgljaj1os84ov69gkku7l62ebb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn4FAr9aLRpsVsaNhfajD1VzH80YH1DtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151200296718-52j7squgljaj1os84ov69gkku7l62ebb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

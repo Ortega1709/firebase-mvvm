@@ -1,5 +1,6 @@
 package com.ortega.firebase_mvvm.data.repository
 
+import android.util.Log
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.ortega.firebase_mvvm.data.datasource.remote.FireStoreInstance
@@ -25,7 +26,6 @@ class MovieRepository {
                     id = it.id,
                     title = it.getString("title") ?: "",
                     category = it.getString("category") ?: "",
-                    date = it.getString("date") ?: "",
                     image = it.getString("image") ?: ""
                 )
             }
